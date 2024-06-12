@@ -1,0 +1,46 @@
+{
+    "name": "parcel-json-schema",
+    "displayName": "Parcel JSON Schema",
+    "description": "JSON schema for .parcelrc and package.json",
+    "version": "0.0.1",
+    "publisher": "funnbot",
+    "private": true,
+    "icon": "./assets/logo.png",
+    "scripts": {
+        "package": "npx @vscode/vsce package"
+    },
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "jsonValidation": [
+            {
+                "fileMatch": [
+                    "/.parcelrc",
+                    "/.parcelrc.json"
+                ],
+                "url": "https://raw.githubusercontent.com/parcel-bundler/parcel/v2/packages/utils/parcelforvscode/schemas/parcelrc.schema.json"
+            },
+            {
+                "fileMatch": "package.json",
+                "url": "https://raw.githubusercontent.com/parcel-bundler/parcel/v2/packages/utils/parcelforvscode/schemas/package-targets.schema.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "jsonc",
+                "filenames": [
+                    ".parcelrc",
+                    ".parcelrc.json"
+                ],
+                "icon": {
+                    "light": "./assets/parcel.png",
+                    "dark": "./assets/parcel.png"
+                }
+            }
+        ]
+    }
+}
